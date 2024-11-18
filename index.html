@@ -238,6 +238,9 @@ async function verifyLastUpdatedTime() {
 	alert("Last modified time has been successfully verified from Github API.");
 }
 
+<br>
+<hr>
+
 window.onload = getLastUpdatedTime;
 </script>
 
@@ -260,8 +263,14 @@ window.onload = getLastUpdatedTime;
 		const Tcount = displayWordCount('ttext');
 		const Gcount = displayWordCount('gtext');
 		const Ccount = displayWordCount('ctext');
+		const Title1 = displayWordCount('Intro');
+		const Title2 = displayWordCount('What');
+		const Title3 = displayWordCount('Tech');
+		const Title4 = displayWordCount('Global');
+		const Title5 = displayWordCount('Conclusion');
+	
 
-		const totalWordCount = Icount + Wcount + Tcount + Gcount + Ccount;
+		const totalWordCount = Icount + Wcount + Tcount + Gcount + Ccount + Title1 + Title2 + Title3 + Title4 + Title5;
 		document.getElementById('totalWordCount').innerText = `Total word count: ${totalWordCount}`;
 		
 	}
