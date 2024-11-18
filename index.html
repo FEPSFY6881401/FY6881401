@@ -200,9 +200,8 @@ Inside ITER. Nature physics.[Online] 16 (9), 895–897.
 <button onclick="verifyLastUpdatedTime()" style = "display: block; margin: 10px auto; padding: 8px 16px;">
 	Verify Last Modified Time
 </button>
-	
-<script>
 
+<script>
 async function getLastUpdatedTime()
 {
 	const username = "FEPSFY6881401";
@@ -212,11 +211,13 @@ async function getLastUpdatedTime()
 	
 	try{
 
-		const response = await fetch(url,{
-		method:"GET",
-		headers:{
-		"Accept": "application/vnd.github.v3+json",
-		}
+		const response = await fetch(url,
+		{
+			method:"GET",
+				headers:
+				{
+				"Accept": "application/vnd.github.v3+json",
+				}
 		});
 		
 		if(!response.ok){
@@ -225,11 +226,12 @@ async function getLastUpdatedTime()
 		}
 		
 		const commits = await response.json();
-		if(commits&& commits.length > 0){
+		if(commits && commits.length > 0)
+		{
 		
-		const lastCommitDate= new Date(commits[0].commit.committer.date);
+			const lastCommitDate= new Date(commits[0].commit.committer.date);
 		
-		document.getElementById("last-updated").innerText = "Last Modified Time: ${lastCommitDate.toLocalString()}";
+			document.getElementById("last-updated").innerText = "Last Modified Time: ${lastCommitDate.toLocaleString()}";
 		} 
 		else
 		{
