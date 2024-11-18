@@ -255,14 +255,14 @@ window.onload = getLastUpdatedTime;
 
 	function displayTotalWordCount()
 	{
-		const Icount = displayWordCount("itext");
-		const Wcount = displayWordCount("wtext");
-		const Tcount = displayWordCount("ttext");
-		const Gcount = displayWordCount("gtext");
-		const Ccount = displayWordCount("ctext");
+		const Icount = displayWordCount('itext');
+		const Wcount = displayWordCount('wtext');
+		const Tcount = displayWordCount('ttext');
+		const Gcount = displayWordCount('gtext');
+		const Ccount = displayWordCount('ctext');
 
 		const totalWordCount = Icount+ Wcount+ Tcount + Gcount + Ccount;
-		document.getElementById("totalWordCount").innerText = Total word count: ${totalWordCount}";
+		document.getElementById('totalWordCount').innerText = Total word count: ${totalWordCount}";
 		
 	}
 	window.onload = displayTotalWordCount;
