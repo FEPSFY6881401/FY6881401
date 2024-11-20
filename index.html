@@ -237,26 +237,21 @@ async function verifyLastUpdatedTime() {
 	await getLastUpdatedTime();
 	alert("Last modified time has been successfully verified from Github API.");
 }
-
-window.onload = getLastUpdatedTime;
 </script>
+
 <br>
 <hr>
 
 <p id="totalWordCount"></p>
 <hr>
 <script>
-
-	function displayWordCount(sectionId,OutputId)
-	{
-		const text = document.getElementById(sectionId).textContent;
+	function displayWordCount(sectionId) {
+		const text = document.getElementById(sectionId)?.textContent || '';
 		const wordArray = text.trim().split(/\s+/);
-		const wordCount = wordArray.length;
-		return wordCount;
+		return text ? wordArray.length : 0;
 	}
 
-	function displayTotalWordCount()
-	{
+	function displayTotalWordCount() {
 		const Icount = displayWordCount('itext');
 		const Wcount = displayWordCount('wtext');
 		const Tcount = displayWordCount('ttext');
@@ -267,15 +262,17 @@ window.onload = getLastUpdatedTime;
 		const Title3 = displayWordCount('Tech');
 		const Title4 = displayWordCount('Global');
 		const Title5 = displayWordCount('Conclusion');
-	
 
 		const totalWordCount = Icount + Wcount + Tcount + Gcount + Ccount + Title1 + Title2 + Title3 + Title4 + Title5;
 		document.getElementById('totalWordCount').innerText = `Total word count: ${totalWordCount}`;
-		
 	}
-	window.onload = displayTotalWordCount;
-	
+
+	window.onload = function() {
+		getLastUpdatedTime();
+		displayTotalWordCount();
+	};
 </script>
+
 
 
 
