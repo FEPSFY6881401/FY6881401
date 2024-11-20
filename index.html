@@ -205,7 +205,7 @@ async function getLastUpdatedTime() {
 	const username = "FEPSFY6881401";
 	const repo = "FY6881401";
 
-	const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+	const url = https://api.github.com/repos/${username}/${repo}/commits;
 
 	try {
 		const response = await fetch(url, {
@@ -216,13 +216,13 @@ async function getLastUpdatedTime() {
 		});
 		
 		if (!response.ok) {
-			throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
+			throw new Error(Error fetching data: ${response.status} - ${response.statusText});
 		}
 		
 		const commits = await response.json();
 		if (commits && commits.length > 0) {
 			const lastCommitDate = new Date(commits[0].commit.committer.date);
-			document.getElementById("last-updated").innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+			document.getElementById("last-updated").innerText = Last Modified Time: ${lastCommitDate.toLocaleString()};
 		} else {
 			document.getElementById("last-updated").innerText = "No commits found in the repository";
 		}
@@ -237,21 +237,26 @@ async function verifyLastUpdatedTime() {
 	await getLastUpdatedTime();
 	alert("Last modified time has been successfully verified from Github API.");
 }
-</script>
 
+window.onload = getLastUpdatedTime;
+</script>
 <br>
 <hr>
 
 <p id="totalWordCount"></p>
 <hr>
 <script>
-	function displayWordCount(sectionId) {
-		const text = document.getElementById(sectionId)?.textContent || '';
+
+	function displayWordCount(sectionId,OutputId)
+	{
+		const text = document.getElementById(sectionId).textContent;
 		const wordArray = text.trim().split(/\s+/);
-		return text ? wordArray.length : 0;
+		const wordCount = wordArray.length;
+		return wordCount;
 	}
 
-	function displayTotalWordCount() {
+	function displayTotalWordCount()
+	{
 		const Icount = displayWordCount('itext');
 		const Wcount = displayWordCount('wtext');
 		const Tcount = displayWordCount('ttext');
@@ -262,15 +267,14 @@ async function verifyLastUpdatedTime() {
 		const Title3 = displayWordCount('Tech');
 		const Title4 = displayWordCount('Global');
 		const Title5 = displayWordCount('Conclusion');
+	
 
 		const totalWordCount = Icount + Wcount + Tcount + Gcount + Ccount + Title1 + Title2 + Title3 + Title4 + Title5;
-		document.getElementById('totalWordCount').innerText = `Total word count: ${totalWordCount}`;
+		document.getElementById('totalWordCount').innerText = Total word count: ${totalWordCount};
+		
 	}
-
-	window.onload = function() {
-		getLastUpdatedTime();
-		displayTotalWordCount();
-	};
+	window.onload = displayTotalWordCount;
+	
 </script>
 
 
