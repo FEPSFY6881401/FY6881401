@@ -4,16 +4,16 @@
     <head>
        <img src="WebBanner2023.png" alt="Banner" width="800" height="200">
 <br>
-      <h1><b>ENG0018 Computer Laboratory 2023/24</b></h1>
+      <h1 id="heading1"><b>ENG0018 Computer Laboratory 2023/24</b></h1>
       <hr>
-      <h2> Student URN:6881401</h2>
+      <h2 id="heading2"> Student URN:6881401</h2>
       <hr>
 	    
     </head>
 
         <body>
         
-        <h2>Harnessing the Power of the Stars, ITER's Role in Humanities Future with Nuclear Energy.</h2>
+        <h2 id="heading3">Harnessing the Power of the Stars, ITER's Role in Humanities Future with Nuclear Energy.</h2>
         <hr>
         <br>
         <br>
@@ -268,9 +268,12 @@ window.onload = getLastUpdatedTime;
 		const Title3 = displayWordCount('Tech');
 		const Title4 = displayWordCount('Global');
 		const Title5 = displayWordCount('Conclusion');
+		const Title6 = displayWordCount('heading1');
+		const Title7 = displayWordCount('heading2');
+		const Title8 = displayWordCount('heading3');
 	
 
-		const totalWordCount = Icount + Wcount + Tcount + Gcount + Ccount + Title1 + Title2 + Title3 + Title4 + Title5;
+		const totalWordCount = Icount + Wcount + Tcount + Gcount + Ccount + Title1 + Title2 + Title3 + Title4 + Title5 + Title6 + Title7 + Title8;
 		document.getElementById('totalWordCount').innerText = `Total word count: ${totalWordCount}`;
 		
 	}
